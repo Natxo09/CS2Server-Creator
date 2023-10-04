@@ -1,0 +1,15 @@
+D:\CODE\CS2ServerCreator\bin\Debug\CS2ServerCreator.exe.config
+D:\CODE\CS2ServerCreator\bin\Debug\CS2ServerCreator.exe
+D:\CODE\CS2ServerCreator\bin\Debug\CS2ServerCreator.pdb
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.csproj.AssemblyReference.cache
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.Properties.Resources.resources
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.csproj.GenerateResource.cache
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.csproj.CoreCompileInputs.cache
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.exe
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.pdb
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.About.resources
+D:\CODE\CS2ServerCreator\bin\Debug\CS2ServerCreator.exe.manifest
+D:\CODE\CS2ServerCreator\bin\Debug\CS2ServerCreator.application
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.exe.manifest
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.application
+D:\CODE\CS2ServerCreator\obj\Debug\CS2ServerCreator.Main.resources
