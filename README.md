@@ -15,3 +15,10 @@
     <strong>The code is not related or tied to that project in any way.</strong><br><br>
     This application allows for modification of common files for server setup, as well as the generation of files such as autoexec.cfg to further configure the server.
 </p>
+
+## Preview
+
+<p align="center">
+  <img src="Media/cap1.png" alt="Vista previa de CS2 Server Creator" />
+</p>
+
