@@ -19,6 +19,6 @@
 ## Preview
 
 <p align="center">
-  <img src="Media/cap1.png" alt="Vista previa de CS2 Server Creator" />
+  <img src="Media/Cap1.png" alt="Vista previa de CS2 Server Creator" />
 </p>
 
