@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://steamcommunity.com/id/natxxo/">
-        <img src="https://img.shields.io/badge/CREADOR%20|%20Natxo-blue?style=for-the-badge" alt="Badge CREADOR | Natxo" />
+        <img src="https://img.shields.io/badge/CREADOR%20|%20Natxo-red?style=for-the-badge" alt="Badge CREADOR | Natxo" />
     </a>
 </p>
 
