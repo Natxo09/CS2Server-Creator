@@ -14,6 +14,12 @@ if not exist .git (
     git remote add origin https://github.com/Natxo09/CS2Server-Creator.git
 )
 
+:: Haz pull de los cambios recientes del repositorio remoto
+git pull origin main
+
+:: Agrega todos los cambios al área de preparación
+git add -A
+
 :: Añade todos los cambios al área de preparación
 git add .
 
