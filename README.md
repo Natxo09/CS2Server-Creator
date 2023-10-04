@@ -36,6 +36,15 @@
   <img src="Media/Cap1.png" alt="Vista previa de CS2 Server Creator" />
 </p>
 
+## Download
+
+To use **CS2 Server Creator**, follow these steps:
+
+1. Visit the [releases page](https://github.com/Natxo09/CS2Server-Creator/releases).
+2. Download the latest version.
+3. Extract the downloaded file - the application is portable.
+
+
 ## Tutorial
 
 ### Step 1: Srcds Configuration
