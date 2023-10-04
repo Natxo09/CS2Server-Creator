@@ -80,6 +80,6 @@ Enable or disable the execution of `autoexec`.
 
 ---
 
-If you need further assistance or have questions, contact me directly.
+Any issues, please refer to the [issues](https://github.com/Natxo09/CS2Server-Creator/issues) section or contact us directly.
 
 
