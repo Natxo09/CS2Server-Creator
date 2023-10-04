@@ -8,6 +8,20 @@
 </p>
 
 <h1 align="center">CS2 Server Creator</h1>
+## Table of Contents
+- [Preview](#preview)
+- [Tutorial](#tutorial)
+  - [Srcds Configuration](#step-1-srcds-configuration)
+  - [Server Name](#step-2-server-name)
+  - [Server Password](#step-3-server-password)
+  - [Map](#step-4-map)
+  - [Network](#step-5-network)
+  - [Gamemode](#step-6-gamemode)
+  - [UDP Port](#step-7-udp-port)
+  - [Max Players](#step-8-max-players)
+  - [Disable Bots](#step-9-disable-bots)
+  - [Autoexec](#step-10-autoexec)
+
 
 <p align="center">
     CS2 Server Creator allows you to set up servers for CS2 in an easy, fast, and intuitive manner.<br>
