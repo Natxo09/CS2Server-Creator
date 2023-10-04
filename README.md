@@ -78,6 +78,12 @@ Turn off the server bots.
 ### Step 10: Autoexec
 Enable or disable the execution of `autoexec`.
 
+## Known Bugs 🐛
+
+- **Loading screen freeze after creating `autoexec.cfg` with cs2.exe closed**: If you create the `autoexec.cfg` while cs2.exe is closed, upon opening it, the loading screen might freeze. If this occurs, it's recommended:
+  - Not to have the server on the same machine/computer as the game.
+  - If separation isn't possible, generate the `autoexec.cfg`, set it up, then remove it from the folder `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`. Once you have started the game, drag the `autoexec.cfg` back into the folder and start the server.
+
 ---
 
 Any issues, please refer to the [issues](https://github.com/Natxo09/CS2Server-Creator/issues) section or contact us directly.
