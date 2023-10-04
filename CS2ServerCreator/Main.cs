@@ -12,7 +12,8 @@ using System.IO;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
-
+using System.Net;
+using System.Net.Sockets;
 
 namespace CS2ServerCreator
 {
@@ -23,6 +24,8 @@ namespace CS2ServerCreator
         public Main()
         {
             InitializeComponent();
+            DisplayInternalIP();
+            DisplayExternalIP();
         }
 
         private void btnDirExplorer_Click(object sender, EventArgs e)
@@ -39,7 +42,7 @@ namespace CS2ServerCreator
                 {
                     selectedDirectory = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
                     textDir.Text = selectedDirectory;
-                    MessageBox.Show($"Selected directory: {selectedDirectory}");
+                    //MessageBox.Show($"Selected directory: {selectedDirectory}");
                 }
             }
         }
@@ -500,5 +503,159 @@ exec banned_ip.cfg
         {
             System.Diagnostics.Process.Start("https://github.com/Natxo09/CS2Server-Creator");
         }
+
+        private void btnSteamCmd_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://developer.valvesoftware.com/wiki/SteamCMD");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void servercfgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedDirectory))
+            {
+                int gameIndex = selectedDirectory.IndexOf("\\game\\");
+
+                if (gameIndex >= 0)
+                {
+                    string cfgPath = selectedDirectory.Substring(0, gameIndex) + "\\game\\csgo\\cfg\\server.cfg";
+
+                    if (File.Exists(cfgPath))
+                    {
+                        Process.Start(cfgPath);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El archivo {cfgPath} no se encontró.");
+                    }
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("The filee 'game' was not found in the current directory. ¿Do you want to select the folder manually?", "Folder was not found", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+                        {
+                            folderDialog.Description = "Select the folder 'game'";
+
+                            if (folderDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                selectedDirectory = folderDialog.SelectedPath;
+                                textDir.Text = selectedDirectory;
+
+                                string cfgPath = Path.Combine(selectedDirectory, "csgo\\cfg\\server.cfg");
+
+                                if (File.Exists(cfgPath))
+                                {
+                                    Process.Start(cfgPath);
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"The filee {cfgPath} was not found.");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select the directory first.");
+            }
+        }
+
+        private void autoexeccfgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedDirectory))
+            {
+                string baseDir = selectedDirectory;
+                int gameIndex = baseDir.IndexOf("\\game\\");
+
+                if (gameIndex != -1)
+                {
+                    baseDir = baseDir.Substring(0, gameIndex + "\\game\\".Length);
+                    string cfgPath = Path.Combine(baseDir, "csgo", "cfg", "autoexec.cfg");
+
+                    if (File.Exists(cfgPath))
+                    {
+                        try
+                        {
+                            // Abrir el archivo autoexec.cfg con el programa predeterminado
+                            Process.Start(cfgPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while opening autoexec.cfg: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("autoexec.cfg does not exist. Please create it first.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The folder 'game' was not found in the selected directory path.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select the right directory.");
+            }
+        }
+
+        private void githubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Natxo09/CS2Server-Creator");
+        }
+        private void DisplayInternalIP()
+        {
+            try
+            {
+                // Obtener el nombre del host del equipo local
+                string hostName = Dns.GetHostName();
+
+                // Encontrar la dirección IP usando el nombre del host
+                IPHostEntry hostEntry = Dns.GetHostEntry(hostName);
+
+                // Seleccionar una dirección IP (la primera que encuentre que es IPv4, si existe)
+                foreach (IPAddress ip in hostEntry.AddressList)
+                {
+                    if (ip.AddressFamily == AddressFamily.InterNetwork) // IPv4
+                    {
+                        textInternalIp.Text = ip.ToString();
+                        return;
+                    }
+                }
+
+                // Si no se encuentra una dirección IPv4, puedes mostrar un mensaje o manejarlo de otra manera
+                textInternalIp.Text = "No IPv4 address found!";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving internal IP: " + ex.Message);
+            }
+        }
+
+        private void DisplayExternalIP()
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                string externalIP = webClient.DownloadString("http://api.ipify.org");
+                textExternalIp.Text = externalIP.Trim(); // Establecer la IP externa en el TextBox
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving external IP: " + ex.Message);
+            }
+        }
+
+
     }
 }

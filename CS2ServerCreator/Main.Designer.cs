@@ -61,7 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSteamCmd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textExternalIp = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,7 +84,8 @@
             this.servercfgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoexeccfgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.discordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textInternalIp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
@@ -463,14 +464,15 @@
             this.panel4.Size = new System.Drawing.Size(518, 88);
             this.panel4.TabIndex = 4;
             // 
-            // button2
+            // btnSteamCmd
             // 
-            this.button2.Location = new System.Drawing.Point(594, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Download SteamCMD";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSteamCmd.Location = new System.Drawing.Point(594, 77);
+            this.btnSteamCmd.Name = "btnSteamCmd";
+            this.btnSteamCmd.Size = new System.Drawing.Size(182, 23);
+            this.btnSteamCmd.TabIndex = 4;
+            this.btnSteamCmd.Text = "Download SteamCMD";
+            this.btnSteamCmd.UseVisualStyleBackColor = true;
+            this.btnSteamCmd.Click += new System.EventHandler(this.btnSteamCmd_Click);
             // 
             // label3
             // 
@@ -541,15 +543,15 @@
             this.textBox2.TabIndex = 12;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // textExternalIp
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(689, 478);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(91, 20);
-            this.textBox3.TabIndex = 13;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textExternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textExternalIp.Location = new System.Drawing.Point(689, 478);
+            this.textExternalIp.Name = "textExternalIp";
+            this.textExternalIp.ReadOnly = true;
+            this.textExternalIp.Size = new System.Drawing.Size(91, 20);
+            this.textExternalIp.TabIndex = 13;
+            this.textExternalIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
@@ -615,22 +617,23 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -646,48 +649,62 @@
             this.servercfgToolStripMenuItem,
             this.autoexeccfgToolStripMenuItem});
             this.commoToolStripMenuItem.Name = "commoToolStripMenuItem";
-            this.commoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.commoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.commoToolStripMenuItem.Text = "Common Files";
             // 
             // servercfgToolStripMenuItem
             // 
             this.servercfgToolStripMenuItem.Name = "servercfgToolStripMenuItem";
-            this.servercfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.servercfgToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.servercfgToolStripMenuItem.Text = "server.cfg";
+            this.servercfgToolStripMenuItem.Click += new System.EventHandler(this.servercfgToolStripMenuItem_Click);
             // 
             // autoexeccfgToolStripMenuItem
             // 
             this.autoexeccfgToolStripMenuItem.Name = "autoexeccfgToolStripMenuItem";
-            this.autoexeccfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.autoexeccfgToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.autoexeccfgToolStripMenuItem.Text = "autoexec.cfg";
+            this.autoexeccfgToolStripMenuItem.Click += new System.EventHandler(this.autoexeccfgToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.discordToolStripMenuItem});
+            this.githubToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // discordToolStripMenuItem
+            // githubToolStripMenuItem
             // 
-            this.discordToolStripMenuItem.Name = "discordToolStripMenuItem";
-            this.discordToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.discordToolStripMenuItem.Text = "Discord";
+            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.githubToolStripMenuItem.Text = "GitHub";
+            this.githubToolStripMenuItem.Click += new System.EventHandler(this.githubToolStripMenuItem_Click);
+            // 
+            // textInternalIp
+            // 
+            this.textInternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textInternalIp.Location = new System.Drawing.Point(689, 452);
+            this.textInternalIp.Name = "textInternalIp";
+            this.textInternalIp.ReadOnly = true;
+            this.textInternalIp.Size = new System.Drawing.Size(91, 20);
+            this.textInternalIp.TabIndex = 18;
+            this.textInternalIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 510);
+            this.Controls.Add(this.textInternalIp);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textExternalIp);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSteamCmd);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -720,7 +737,7 @@
         private System.Windows.Forms.TextBox textDir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSteamCmd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button button4;
@@ -728,7 +745,7 @@
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textExternalIp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
@@ -755,7 +772,7 @@
         private System.Windows.Forms.ToolStripMenuItem commoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem servercfgToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem discordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numericUpDownPort;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label10;
@@ -771,6 +788,7 @@
         private System.Windows.Forms.ToolStripMenuItem autoexeccfgToolStripMenuItem;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textInternalIp;
     }
 }
 
