@@ -57,6 +57,6 @@ Enable or disable the execution of `autoexec`.
 
 ---
 
-If you need further assistance or have questions, please refer to the [FAQ](#faq) section or contact me directly.
+If you need further assistance or have questions, contact me directly.
 
 
