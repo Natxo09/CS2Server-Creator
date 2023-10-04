@@ -9,6 +9,9 @@
 
 <h1 align="center">CS2 Server Creator</h1>
 
+
+<p align="center">
+
 ## Table of Contents
 - [Preview](#preview)
 - [Tutorial](#tutorial)
@@ -22,6 +25,9 @@
   - [Max Players](#step-8-max-players)
   - [Disable Bots](#step-9-disable-bots)
   - [Autoexec](#step-10-autoexec)
+
+</p>
+
 
 
 <p align="center">
