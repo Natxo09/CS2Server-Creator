@@ -68,7 +68,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.textExternalIp = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -533,15 +533,15 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // textBox2
+            // txtStatus
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(12, 478);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(653, 20);
-            this.textBox2.TabIndex = 12;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Location = new System.Drawing.Point(12, 478);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(653, 20);
+            this.txtStatus.TabIndex = 12;
+            this.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textExternalIp
             // 
@@ -617,21 +617,21 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -649,20 +649,20 @@
             this.servercfgToolStripMenuItem,
             this.autoexeccfgToolStripMenuItem});
             this.commoToolStripMenuItem.Name = "commoToolStripMenuItem";
-            this.commoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.commoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.commoToolStripMenuItem.Text = "Common Files";
             // 
             // servercfgToolStripMenuItem
             // 
             this.servercfgToolStripMenuItem.Name = "servercfgToolStripMenuItem";
-            this.servercfgToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.servercfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.servercfgToolStripMenuItem.Text = "server.cfg";
             this.servercfgToolStripMenuItem.Click += new System.EventHandler(this.servercfgToolStripMenuItem_Click);
             // 
             // autoexeccfgToolStripMenuItem
             // 
             this.autoexeccfgToolStripMenuItem.Name = "autoexeccfgToolStripMenuItem";
-            this.autoexeccfgToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.autoexeccfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.autoexeccfgToolStripMenuItem.Text = "autoexec.cfg";
             this.autoexeccfgToolStripMenuItem.Click += new System.EventHandler(this.autoexeccfgToolStripMenuItem_Click);
             // 
@@ -677,7 +677,7 @@
             // githubToolStripMenuItem
             // 
             this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
-            this.githubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.githubToolStripMenuItem.Text = "GitHub";
             this.githubToolStripMenuItem.Click += new System.EventHandler(this.githubToolStripMenuItem_Click);
             // 
@@ -699,7 +699,7 @@
             this.Controls.Add(this.textInternalIp);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textExternalIp);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnUpdate);
@@ -744,7 +744,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox textExternalIp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
