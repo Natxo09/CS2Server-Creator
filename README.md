@@ -22,3 +22,41 @@
   <img src="Media/Cap1.png" alt="Vista previa de CS2 Server Creator" />
 </p>
 
+## Tutorial
+
+### Step 1: Srcds Configuration
+Select the directory of the `cs2.exe`. For example: 
+`C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\bin\win64`
+
+### Step 2: Server Name
+To modify this section, you must have generated the `autoexec.cfg` using the button on the right.
+
+### Step 3: Server Password
+Similar to the `Server Name`, you need to have the `autoexec.cfg` created.
+
+### Step 4: Map
+Choose the map for your server. (Future compatibility with workshop maps is planned.)
+
+### Step 5: Network
+Not Available Yet.
+
+### Step 6: Gamemode
+Select the desired game mode. Remember, based on the game mode you choose, you will need to modify the respective CFGs.
+
+### Step 7: UDP Port
+Select the server port.
+
+### Step 8: Max Players
+Set the maximum number of players for the server (Up to 64).
+
+### Step 9: Disable Bots
+Turn off the server bots.
+
+### Step 10: Autoexec
+Enable or disable the execution of `autoexec`.
+
+---
+
+If you need further assistance or have questions, please refer to the [FAQ](#faq) section or contact me directly.
+
+
