@@ -8,6 +8,7 @@
 </p>
 
 <h1 align="center">CS2 Server Creator</h1>
+
 ## Table of Contents
 - [Preview](#preview)
 - [Tutorial](#tutorial)
