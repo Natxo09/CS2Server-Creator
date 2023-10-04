@@ -495,5 +495,10 @@ exec banned_ip.cfg
         {
             LoadConfiguration();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Natxo09/CS2Server-Creator");
+        }
     }
 }
