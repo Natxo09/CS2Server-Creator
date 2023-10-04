@@ -3,6 +3,9 @@
         <img src="https://img.shields.io/badge/CREADOR%20|%20Natxo-red?style=for-the-badge" alt="Badge CREADOR | Natxo" />
     </a>
 </p>
+<p align="center">
+  <img src="Media/icon.png" alt="Icono de CS2 Server Creator" />
+</p>
 
 <h1 align="center">CS2 Server Creator</h1>
 
