@@ -29,6 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.btnSteamCmd = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.textExternalIp = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.servercfgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoexeccfgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textInternalIp = new System.Windows.Forms.TextBox();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -65,38 +92,269 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnSteamCmd = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.textExternalIp = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.commoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.servercfgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoexeccfgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textInternalIp = new System.Windows.Forms.TextBox();
+            this.tabConsole = new System.Windows.Forms.TabPage();
+            this.richTextBoxConsole = new System.Windows.Forms.RichTextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.checkBoxConsole = new System.Windows.Forms.CheckBox();
+            this.btnClearConsole = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayers)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.tabConsole.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnSteamCmd
+            // 
+            this.btnSteamCmd.Location = new System.Drawing.Point(646, 106);
+            this.btnSteamCmd.Name = "btnSteamCmd";
+            this.btnSteamCmd.Size = new System.Drawing.Size(182, 23);
+            this.btnSteamCmd.TabIndex = 4;
+            this.btnSteamCmd.Text = "Download SteamCMD";
+            this.btnSteamCmd.UseVisualStyleBackColor = true;
+            this.btnSteamCmd.Click += new System.EventHandler(this.btnSteamCmd_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(643, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Tools";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(646, 155);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(182, 23);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "Check for Updates";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(9, 26);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(182, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "SourceMod";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(9, 80);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(182, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Metadmod";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Location = new System.Drawing.Point(646, 391);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(86, 23);
+            this.btnAbout.TabIndex = 10;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(743, 391);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(86, 23);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Location = new System.Drawing.Point(12, 511);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(605, 20);
+            this.txtStatus.TabIndex = 12;
+            this.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textExternalIp
+            // 
+            this.textExternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textExternalIp.Location = new System.Drawing.Point(738, 511);
+            this.textExternalIp.Name = "textExternalIp";
+            this.textExternalIp.ReadOnly = true;
+            this.textExternalIp.Size = new System.Drawing.Size(91, 20);
+            this.textExternalIp.TabIndex = 13;
+            this.textExternalIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Location = new System.Drawing.Point(637, 209);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 122);
+            this.panel2.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(49, 7);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 13);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Not Avaible Yet";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(643, 202);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Addons";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(637, 78);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 112);
+            this.panel3.TabIndex = 16;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(849, 24);
+            this.menuStrip1.TabIndex = 17;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.commoToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // commoToolStripMenuItem
+            // 
+            this.commoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.servercfgToolStripMenuItem,
+            this.autoexeccfgToolStripMenuItem});
+            this.commoToolStripMenuItem.Name = "commoToolStripMenuItem";
+            this.commoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.commoToolStripMenuItem.Text = "Common Files";
+            // 
+            // servercfgToolStripMenuItem
+            // 
+            this.servercfgToolStripMenuItem.Name = "servercfgToolStripMenuItem";
+            this.servercfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.servercfgToolStripMenuItem.Text = "server.cfg";
+            this.servercfgToolStripMenuItem.Click += new System.EventHandler(this.servercfgToolStripMenuItem_Click);
+            // 
+            // autoexeccfgToolStripMenuItem
+            // 
+            this.autoexeccfgToolStripMenuItem.Name = "autoexeccfgToolStripMenuItem";
+            this.autoexeccfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.autoexeccfgToolStripMenuItem.Text = "autoexec.cfg";
+            this.autoexeccfgToolStripMenuItem.Click += new System.EventHandler(this.autoexeccfgToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.githubToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // githubToolStripMenuItem
+            // 
+            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.githubToolStripMenuItem.Text = "GitHub";
+            this.githubToolStripMenuItem.Click += new System.EventHandler(this.githubToolStripMenuItem_Click);
+            // 
+            // textInternalIp
+            // 
+            this.textInternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textInternalIp.Location = new System.Drawing.Point(646, 511);
+            this.textInternalIp.Name = "textInternalIp";
+            this.textInternalIp.ReadOnly = true;
+            this.textInternalIp.Size = new System.Drawing.Size(91, 20);
+            this.textInternalIp.TabIndex = 18;
+            this.textInternalIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabConsole);
+            this.tabControl.Location = new System.Drawing.Point(12, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(619, 478);
+            this.tabControl.TabIndex = 19;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(611, 452);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Configuration";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -108,15 +366,15 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(13, 39);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 466);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(611, 452);
+            this.panel1.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 129);
+            this.label10.Location = new System.Drawing.Point(25, 109);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 13);
             this.label10.TabIndex = 6;
@@ -153,7 +411,7 @@
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.textSvName);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(17, 136);
+            this.panel5.Location = new System.Drawing.Point(11, 116);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(566, 315);
             this.panel5.TabIndex = 5;
@@ -466,7 +724,7 @@
             // 
             // btnDirExplorer
             // 
-            this.btnDirExplorer.Location = new System.Drawing.Point(376, 52);
+            this.btnDirExplorer.Location = new System.Drawing.Point(384, 48);
             this.btnDirExplorer.Name = "btnDirExplorer";
             this.btnDirExplorer.Size = new System.Drawing.Size(75, 23);
             this.btnDirExplorer.TabIndex = 3;
@@ -478,7 +736,7 @@
             // 
             this.textDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDir.Location = new System.Drawing.Point(135, 53);
+            this.textDir.Location = new System.Drawing.Point(143, 49);
             this.textDir.Name = "textDir";
             this.textDir.ReadOnly = true;
             this.textDir.Size = new System.Drawing.Size(235, 21);
@@ -487,7 +745,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 56);
+            this.label2.Location = new System.Drawing.Point(38, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 1;
@@ -496,7 +754,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 11);
+            this.label1.Location = new System.Drawing.Point(23, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 0;
@@ -505,243 +763,69 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(17, 17);
+            this.panel4.Location = new System.Drawing.Point(11, 11);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(518, 88);
             this.panel4.TabIndex = 4;
             // 
-            // btnSteamCmd
+            // tabConsole
             // 
-            this.btnSteamCmd.Location = new System.Drawing.Point(646, 106);
-            this.btnSteamCmd.Name = "btnSteamCmd";
-            this.btnSteamCmd.Size = new System.Drawing.Size(182, 23);
-            this.btnSteamCmd.TabIndex = 4;
-            this.btnSteamCmd.Text = "Download SteamCMD";
-            this.btnSteamCmd.UseVisualStyleBackColor = true;
-            this.btnSteamCmd.Click += new System.EventHandler(this.btnSteamCmd_Click);
+            this.tabConsole.Controls.Add(this.btnClearConsole);
+            this.tabConsole.Controls.Add(this.textBox2);
+            this.tabConsole.Controls.Add(this.richTextBoxConsole);
+            this.tabConsole.Location = new System.Drawing.Point(4, 22);
+            this.tabConsole.Name = "tabConsole";
+            this.tabConsole.Padding = new System.Windows.Forms.Padding(3);
+            this.tabConsole.Size = new System.Drawing.Size(611, 452);
+            this.tabConsole.TabIndex = 1;
+            this.tabConsole.Text = "Console";
+            this.tabConsole.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // richTextBoxConsole
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(643, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tools";
+            this.richTextBoxConsole.Location = new System.Drawing.Point(7, 7);
+            this.richTextBoxConsole.Name = "richTextBoxConsole";
+            this.richTextBoxConsole.ReadOnly = true;
+            this.richTextBoxConsole.Size = new System.Drawing.Size(594, 413);
+            this.richTextBoxConsole.TabIndex = 0;
+            this.richTextBoxConsole.Text = "";
             // 
-            // btnUpdate
+            // textBox2
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(646, 155);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(182, 23);
-            this.btnUpdate.TabIndex = 6;
-            this.btnUpdate.Text = "Check for Updates";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(7, 427);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(509, 20);
+            this.textBox2.TabIndex = 1;
             // 
-            // button4
+            // checkBoxConsole
             // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(9, 26);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "SourceMod";
-            this.button4.UseVisualStyleBackColor = true;
+            this.checkBoxConsole.AutoSize = true;
+            this.checkBoxConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxConsole.Location = new System.Drawing.Point(669, 353);
+            this.checkBoxConsole.Name = "checkBoxConsole";
+            this.checkBoxConsole.Size = new System.Drawing.Size(143, 19);
+            this.checkBoxConsole.TabIndex = 25;
+            this.checkBoxConsole.Text = "Open console on app";
+            this.checkBoxConsole.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnClearConsole
             // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(9, 80);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(182, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Metadmod";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Location = new System.Drawing.Point(646, 391);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(86, 23);
-            this.btnAbout.TabIndex = 10;
-            this.btnAbout.Text = "About";
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(743, 391);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(86, 23);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStatus.Location = new System.Drawing.Point(12, 511);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(605, 20);
-            this.txtStatus.TabIndex = 12;
-            this.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textExternalIp
-            // 
-            this.textExternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textExternalIp.Location = new System.Drawing.Point(738, 511);
-            this.textExternalIp.Name = "textExternalIp";
-            this.textExternalIp.ReadOnly = true;
-            this.textExternalIp.Size = new System.Drawing.Size(91, 20);
-            this.textExternalIp.TabIndex = 13;
-            this.textExternalIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Location = new System.Drawing.Point(637, 209);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 122);
-            this.panel2.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(49, 7);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 13);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Not Avaible Yet";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(643, 202);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Addons";
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(637, 78);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 112);
-            this.panel3.TabIndex = 16;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(849, 24);
-            this.menuStrip1.TabIndex = 17;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.loadToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-            this.toolStripMenuItem1.Text = "File";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.loadToolStripMenuItem.Text = "Load";
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commoToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // commoToolStripMenuItem
-            // 
-            this.commoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.servercfgToolStripMenuItem,
-            this.autoexeccfgToolStripMenuItem});
-            this.commoToolStripMenuItem.Name = "commoToolStripMenuItem";
-            this.commoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.commoToolStripMenuItem.Text = "Common Files";
-            // 
-            // servercfgToolStripMenuItem
-            // 
-            this.servercfgToolStripMenuItem.Name = "servercfgToolStripMenuItem";
-            this.servercfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.servercfgToolStripMenuItem.Text = "server.cfg";
-            this.servercfgToolStripMenuItem.Click += new System.EventHandler(this.servercfgToolStripMenuItem_Click);
-            // 
-            // autoexeccfgToolStripMenuItem
-            // 
-            this.autoexeccfgToolStripMenuItem.Name = "autoexeccfgToolStripMenuItem";
-            this.autoexeccfgToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.autoexeccfgToolStripMenuItem.Text = "autoexec.cfg";
-            this.autoexeccfgToolStripMenuItem.Click += new System.EventHandler(this.autoexeccfgToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.githubToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // githubToolStripMenuItem
-            // 
-            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
-            this.githubToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.githubToolStripMenuItem.Text = "GitHub";
-            this.githubToolStripMenuItem.Click += new System.EventHandler(this.githubToolStripMenuItem_Click);
-            // 
-            // textInternalIp
-            // 
-            this.textInternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textInternalIp.Location = new System.Drawing.Point(646, 511);
-            this.textInternalIp.Name = "textInternalIp";
-            this.textInternalIp.ReadOnly = true;
-            this.textInternalIp.Size = new System.Drawing.Size(91, 20);
-            this.textInternalIp.TabIndex = 18;
-            this.textInternalIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnClearConsole.Location = new System.Drawing.Point(521, 425);
+            this.btnClearConsole.Name = "btnClearConsole";
+            this.btnClearConsole.Size = new System.Drawing.Size(86, 23);
+            this.btnClearConsole.TabIndex = 11;
+            this.btnClearConsole.Text = "Clear";
+            this.btnClearConsole.UseVisualStyleBackColor = true;
+            this.btnClearConsole.Click += new System.EventHandler(this.btnClearConsole_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 543);
+            this.Controls.Add(this.checkBoxConsole);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.textInternalIp);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textExternalIp);
@@ -751,7 +835,6 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSteamCmd);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
@@ -761,28 +844,26 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CS2 Server Creator";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayers)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabConsole.ResumeLayout(false);
+            this.tabConsole.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDirExplorer;
-        private System.Windows.Forms.TextBox textDir;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSteamCmd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdate;
@@ -795,21 +876,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboMap;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textSvName;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnServerCfg;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.CheckBox checkInsecure;
-        private System.Windows.Forms.CheckBox checkDisBots;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDownPlayers;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -819,26 +885,53 @@
         private System.Windows.Forms.ToolStripMenuItem servercfgToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
-        private System.Windows.Forms.NumericUpDown numericUpDownPort;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboGamemode;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnAutoexecCfg;
-        private System.Windows.Forms.Button btnCreateAutoexecCfg;
-        private System.Windows.Forms.CheckBox checkAutoexec;
         private System.Windows.Forms.ToolStripMenuItem autoexeccfgToolStripMenuItem;
-        private System.Windows.Forms.TextBox textPassword;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textInternalIp;
-        private System.Windows.Forms.TextBox textCustomParameters;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnInfoParam;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnInfoParam;
+        private System.Windows.Forms.TextBox textCustomParameters;
+        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox checkAutoexec;
+        private System.Windows.Forms.Button btnAutoexecCfg;
+        private System.Windows.Forms.Button btnCreateAutoexecCfg;
+        private System.Windows.Forms.ComboBox comboGamemode;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.NumericUpDown numericUpDownPort;
+        private System.Windows.Forms.Button btnServerCfg;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.CheckBox checkInsecure;
+        private System.Windows.Forms.CheckBox checkDisBots;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numericUpDownPlayers;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboMap;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textSvName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDirExplorer;
+        private System.Windows.Forms.TextBox textDir;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TabPage tabConsole;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RichTextBox richTextBoxConsole;
+        private System.Windows.Forms.CheckBox checkBoxConsole;
+        private System.Windows.Forms.Button btnClearConsole;
     }
 }
 

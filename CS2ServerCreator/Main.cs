@@ -48,6 +48,34 @@ namespace CS2ServerCreator
             }
         }
 
+        private void AppendTextToConsole(string text)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action<string>(AppendTextToConsole), new object[] { text });
+                return;
+            }
+            richTextBoxConsole.AppendText(text + Environment.NewLine);
+        }
+
+        private void Cs2Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                Invoke(new Action(() =>
+                {
+                    richTextBoxConsole.AppendText(e.Data + Environment.NewLine);
+                    richTextBoxConsole.SelectionStart = richTextBoxConsole.Text.Length;
+                    richTextBoxConsole.ScrollToCaret();
+                }));
+            }
+        }
+
+        private void btnClearConsole_Click(object sender, EventArgs e)
+        {
+            richTextBoxConsole.Clear();
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             if (cs2Process == null || cs2Process.HasExited)  // Si el proceso no está en ejecución
@@ -124,7 +152,24 @@ namespace CS2ServerCreator
                             WorkingDirectory = selectedDirectory
                         };
 
-                        cs2Process = Process.Start(startInfo);
+                        if (checkBoxConsole.Checked) // Si el checkBox está marcado
+                        {
+                            args += " -hideconsole";
+                            startInfo.RedirectStandardOutput = true;
+                            startInfo.UseShellExecute = false;
+                            startInfo.CreateNoWindow = true;
+                            startInfo.WindowStyle = ProcessWindowStyle.Hidden; // Esta línea evita que se muestre la consola.
+
+                            cs2Process = Process.Start(startInfo);
+
+                            cs2Process.OutputDataReceived += Cs2Process_OutputDataReceived;
+                            cs2Process.BeginOutputReadLine();
+                        }
+                        else
+                        {
+                            cs2Process = Process.Start(startInfo);
+                        }
+
                         btnStart.Text = "Stop";  // Cambiar el texto del botón a "Stop"
                         txtStatus.Text = "Running ......";
                     }
@@ -144,6 +189,20 @@ namespace CS2ServerCreator
                 cs2Process = null;  // Restablecer la variable
                 btnStart.Text = "Start";  // Cambiar el texto del botón de nuevo a "Start"
                 txtStatus.Text = "Stopped ......";
+            }
+        }
+
+        private void AppendTextAndScroll(RichTextBox box, string text)
+        {
+            if (box.InvokeRequired)
+            {
+                box.Invoke(new Action(() => AppendTextAndScroll(box, text)));
+            }
+            else
+            {
+                box.AppendText(text);
+                box.SelectionStart = box.Text.Length;
+                box.ScrollToCaret();
             }
         }
 
@@ -630,6 +689,7 @@ exec banned_ip.cfg
         {
             System.Diagnostics.Process.Start("https://github.com/Natxo09/CS2Server-Creator");
         }
+
         private void DisplayInternalIP()
         {
             try
@@ -677,5 +737,7 @@ exec banned_ip.cfg
         {
             System.Diagnostics.Process.Start("https://developer.valvesoftware.com/wiki/Command_line_options");
         }
+
+
     }
 }
