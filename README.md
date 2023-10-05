@@ -31,7 +31,7 @@
   - [Insecure/Secure](#step-10-insecure-secure)
   - [Autoexec](#step-11-autoexec)
   - [Custom Parameters](#step-12-custom-parameters)
-  - [Scripting](#scripting)
+- [Scripting](#scripting)
 
 ## Preview
 
