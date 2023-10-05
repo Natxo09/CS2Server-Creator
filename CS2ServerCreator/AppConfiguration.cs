@@ -15,7 +15,9 @@ namespace CS2ServerCreator
         public int MaxPlayers { get; set; }
         public int Port { get; set; }
         public bool IsAutoexecChecked { get; set; }
+        public bool IsInsecureChecked { get; set; }
         public bool IsDisableBotsChecked { get; set; }
+        public string CustomParameters { get; set; }
         public string ServerName { get; set; }
         public string ServerPassword { get; set; }
     }

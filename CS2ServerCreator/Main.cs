@@ -14,6 +14,7 @@ using System.Security.Cryptography;
 using System.Xml.Serialization;
 using System.Net;
 using System.Net.Sockets;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CS2ServerCreator
 {
@@ -58,7 +59,8 @@ namespace CS2ServerCreator
                     if (System.IO.File.Exists(exePath))
                     {
                         // Argumentos base
-                        string args = "-dedicated -secure";
+                        string args = "-dedicated";
+                        string customArgs = textCustomParameters.Text.Trim();
 
                         // Determinar los argumentos basados en comboGamemode:
                         if (comboGamemode.SelectedItem != null)
@@ -85,6 +87,22 @@ namespace CS2ServerCreator
                             args += " +map " + selectedMap;
                         }
 
+                        // Añadir -insercure o -secure a args
+                        if (checkInsecure.Checked)
+                        {
+                            args += " -insecure";
+                        }
+                        else
+                        {
+                            args += " -secure";
+                        }
+
+                        // Añadir Custom args
+                        if (!string.IsNullOrEmpty(customArgs))
+                        {
+                            args += " " + customArgs;
+                        }
+
                         // Añadir el número de jugadores máximo basado en numericUpDownPlayers
                         int numPlayers = (int)numericUpDownPlayers.Value;
                         args += " -maxplayers " + numPlayers;
@@ -108,6 +126,7 @@ namespace CS2ServerCreator
 
                         cs2Process = Process.Start(startInfo);
                         btnStart.Text = "Stop";  // Cambiar el texto del botón a "Stop"
+                        txtStatus.Text = "Running ......";
                     }
                     else
                     {
@@ -124,11 +143,9 @@ namespace CS2ServerCreator
                 cs2Process.Kill();  // Terminar el proceso
                 cs2Process = null;  // Restablecer la variable
                 btnStart.Text = "Start";  // Cambiar el texto del botón de nuevo a "Start"
+                txtStatus.Text = "Stopped ......";
             }
         }
-
-
-
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -214,7 +231,7 @@ namespace CS2ServerCreator
                         {
                             // Contenido para autoexec.cfg
                             string content = @"
-hostname ""Counter-Strike: Global Offensive Dedicated Server""
+hostname ""Counter-Strike 2 Dedicated Server""
 rcon_password ""yourrconpassword""
 sv_password """"
 sv_cheats 0
@@ -301,7 +318,6 @@ exec banned_ip.cfg
             }
         }
 
-
         private void textSvName_TextChanged(object sender, EventArgs e)
         {
             UpdateAutoexecHostname();
@@ -365,7 +381,6 @@ exec banned_ip.cfg
             UpdateAutoexecPassword();
         }
 
-
         private void btnAutoexecCfg_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(selectedDirectory))
@@ -405,6 +420,7 @@ exec banned_ip.cfg
                 MessageBox.Show("Please, select the right directory.");
             }
         }
+
         private int GetGameModeIndex(string gameMode)
         {
             switch (gameMode)
@@ -439,7 +455,9 @@ exec banned_ip.cfg
                 MaxPlayers = (int)numericUpDownPlayers.Value,
                 Port = (int)numericUpDownPort.Value,
                 IsAutoexecChecked = checkAutoexec.Checked,
+                IsInsecureChecked = checkInsecure.Checked,
                 IsDisableBotsChecked = checkDisBots.Checked,
+                CustomParameters = textCustomParameters.Text,
                 ServerName = textSvName.Text,
                 ServerPassword = textPassword.Text,
             };
@@ -454,9 +472,6 @@ exec banned_ip.cfg
                 SaveConfigurationToXml(config, saveFileDialog.FileName);
             }
         }
-
-
-
 
         private AppConfiguration LoadConfigurationFromXml(string filePath)
         {
@@ -477,17 +492,19 @@ exec banned_ip.cfg
                 AppConfiguration config = LoadConfigurationFromXml(openFileDialog.FileName);
 
                 selectedDirectory = config.SelectedDirectory;
+                textDir.Text = selectedDirectory;
                 comboGamemode.SelectedIndex = GetGameModeIndex(config.GameMode);
                 comboMap.SelectedItem = config.SelectedMap;
                 numericUpDownPlayers.Value = config.MaxPlayers;
                 numericUpDownPort.Value = config.Port;
                 checkAutoexec.Checked = config.IsAutoexecChecked;
+                checkInsecure.Checked = config.IsInsecureChecked;
                 checkDisBots.Checked = config.IsDisableBotsChecked;
+                textCustomParameters.Text = config.CustomParameters;
                 textSvName.Text = config.ServerName;
                 textPassword.Text = config.ServerPassword;
             }
         }
-
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -656,5 +673,9 @@ exec banned_ip.cfg
             }
         }
 
+        private void btnInfoParam_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://developer.valvesoftware.com/wiki/Command_line_options");
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace CS2ServerCreator
         {
             InitializeComponent();
         }
+
+        private void labelGitHub_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Natxo09");
+        }
     }
 }

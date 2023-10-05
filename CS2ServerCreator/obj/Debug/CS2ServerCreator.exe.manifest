@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CS2ServerCreator.exe" size="167352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CS2ServerCreator.exe" size="169912">
       <assemblyIdentity name="CS2ServerCreator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i7mIFYkTDkwcG7DE7REpXhMMj/x1IhwJGz8sogWdwlg=</dsig:DigestValue>
+        <dsig:DigestValue>b3yT+CD2Us5GG6VBFBjbVXUIQQf46F7wuBXieFTOLw0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

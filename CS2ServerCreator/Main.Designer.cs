@@ -32,6 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnInfoParam = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textCustomParameters = new System.Windows.Forms.TextBox();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.checkAutoexec = new System.Windows.Forms.CheckBox();
@@ -106,7 +110,7 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(13, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 433);
+            this.panel1.Size = new System.Drawing.Size(604, 466);
             this.panel1.TabIndex = 0;
             // 
             // label10
@@ -121,6 +125,10 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnInfoParam);
+            this.panel5.Controls.Add(this.label16);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.textCustomParameters);
             this.panel5.Controls.Add(this.textPassword);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.checkAutoexec);
@@ -147,14 +155,52 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(17, 136);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(518, 281);
+            this.panel5.Size = new System.Drawing.Size(566, 315);
             this.panel5.TabIndex = 5;
+            // 
+            // btnInfoParam
+            // 
+            this.btnInfoParam.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInfoParam.Location = new System.Drawing.Point(519, 131);
+            this.btnInfoParam.Name = "btnInfoParam";
+            this.btnInfoParam.Size = new System.Drawing.Size(42, 21);
+            this.btnInfoParam.TabIndex = 30;
+            this.btnInfoParam.Text = "?";
+            this.btnInfoParam.UseVisualStyleBackColor = true;
+            this.btnInfoParam.Click += new System.EventHandler(this.btnInfoParam_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(411, 111);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 13);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Custom Parameters";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(431, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Parameters";
+            // 
+            // textCustomParameters
+            // 
+            this.textCustomParameters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textCustomParameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCustomParameters.Location = new System.Drawing.Point(358, 131);
+            this.textCustomParameters.Name = "textCustomParameters";
+            this.textCustomParameters.Size = new System.Drawing.Size(159, 21);
+            this.textCustomParameters.TabIndex = 27;
             // 
             // textPassword
             // 
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPassword.Location = new System.Drawing.Point(88, 78);
+            this.textPassword.Location = new System.Drawing.Point(88, 91);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(235, 21);
             this.textPassword.TabIndex = 26;
@@ -163,7 +209,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1, 82);
+            this.label14.Location = new System.Drawing.Point(1, 95);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 13);
             this.label14.TabIndex = 25;
@@ -173,7 +219,7 @@
             // 
             this.checkAutoexec.AutoSize = true;
             this.checkAutoexec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkAutoexec.Location = new System.Drawing.Point(373, 98);
+            this.checkAutoexec.Location = new System.Drawing.Point(384, 63);
             this.checkAutoexec.Name = "checkAutoexec";
             this.checkAutoexec.Size = new System.Drawing.Size(76, 19);
             this.checkAutoexec.TabIndex = 24;
@@ -182,7 +228,7 @@
             // 
             // btnAutoexecCfg
             // 
-            this.btnAutoexecCfg.Location = new System.Drawing.Point(471, 123);
+            this.btnAutoexecCfg.Location = new System.Drawing.Point(497, 179);
             this.btnAutoexecCfg.Name = "btnAutoexecCfg";
             this.btnAutoexecCfg.Size = new System.Drawing.Size(42, 23);
             this.btnAutoexecCfg.TabIndex = 23;
@@ -192,7 +238,7 @@
             // 
             // btnCreateAutoexecCfg
             // 
-            this.btnCreateAutoexecCfg.Location = new System.Drawing.Point(358, 123);
+            this.btnCreateAutoexecCfg.Location = new System.Drawing.Point(384, 179);
             this.btnCreateAutoexecCfg.Name = "btnCreateAutoexecCfg";
             this.btnCreateAutoexecCfg.Size = new System.Drawing.Size(116, 23);
             this.btnCreateAutoexecCfg.TabIndex = 22;
@@ -207,7 +253,7 @@
             "Casual",
             "Competitive",
             "Deathmatch"});
-            this.comboGamemode.Location = new System.Drawing.Point(89, 193);
+            this.comboGamemode.Location = new System.Drawing.Point(89, 218);
             this.comboGamemode.Name = "comboGamemode";
             this.comboGamemode.Size = new System.Drawing.Size(236, 21);
             this.comboGamemode.TabIndex = 21;
@@ -215,7 +261,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 196);
+            this.label13.Location = new System.Drawing.Point(13, 221);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 13);
             this.label13.TabIndex = 20;
@@ -255,7 +301,7 @@
             // 
             // numericUpDownPort
             // 
-            this.numericUpDownPort.Location = new System.Drawing.Point(88, 233);
+            this.numericUpDownPort.Location = new System.Drawing.Point(88, 263);
             this.numericUpDownPort.Maximum = new decimal(new int[] {
             80000,
             0,
@@ -273,7 +319,7 @@
             // 
             // btnServerCfg
             // 
-            this.btnServerCfg.Location = new System.Drawing.Point(358, 169);
+            this.btnServerCfg.Location = new System.Drawing.Point(384, 225);
             this.btnServerCfg.Name = "btnServerCfg";
             this.btnServerCfg.Size = new System.Drawing.Size(155, 23);
             this.btnServerCfg.TabIndex = 15;
@@ -283,7 +329,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(427, 208);
+            this.btnStart.Location = new System.Drawing.Point(453, 276);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(86, 23);
             this.btnStart.TabIndex = 14;
@@ -294,9 +340,8 @@
             // checkInsecure
             // 
             this.checkInsecure.AutoSize = true;
-            this.checkInsecure.Enabled = false;
             this.checkInsecure.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInsecure.Location = new System.Drawing.Point(373, 73);
+            this.checkInsecure.Location = new System.Drawing.Point(384, 30);
             this.checkInsecure.Name = "checkInsecure";
             this.checkInsecure.Size = new System.Drawing.Size(73, 19);
             this.checkInsecure.TabIndex = 13;
@@ -307,7 +352,7 @@
             // 
             this.checkDisBots.AutoSize = true;
             this.checkDisBots.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDisBots.Location = new System.Drawing.Point(373, 46);
+            this.checkDisBots.Location = new System.Drawing.Point(466, 30);
             this.checkDisBots.Name = "checkDisBots";
             this.checkDisBots.Size = new System.Drawing.Size(95, 19);
             this.checkDisBots.TabIndex = 12;
@@ -317,7 +362,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(213, 235);
+            this.label9.Location = new System.Drawing.Point(213, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 11;
@@ -325,7 +370,7 @@
             // 
             // numericUpDownPlayers
             // 
-            this.numericUpDownPlayers.Location = new System.Drawing.Point(287, 233);
+            this.numericUpDownPlayers.Location = new System.Drawing.Point(287, 263);
             this.numericUpDownPlayers.Maximum = new decimal(new int[] {
             64,
             0,
@@ -344,7 +389,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 235);
+            this.label8.Location = new System.Drawing.Point(13, 265);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 8;
@@ -357,7 +402,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "LAN",
             "Internet"});
-            this.comboBox2.Location = new System.Drawing.Point(88, 152);
+            this.comboBox2.Location = new System.Drawing.Point(88, 173);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(236, 21);
             this.comboBox2.TabIndex = 7;
@@ -365,7 +410,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 155);
+            this.label7.Location = new System.Drawing.Point(12, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 6;
@@ -375,6 +420,7 @@
             // 
             this.comboMap.FormattingEnabled = true;
             this.comboMap.Items.AddRange(new object[] {
+            "",
             "de_dust2",
             "de_mirage",
             "de_inferno",
@@ -385,7 +431,7 @@
             "de_vertigo",
             "de_acient",
             "de_overpass"});
-            this.comboMap.Location = new System.Drawing.Point(88, 113);
+            this.comboMap.Location = new System.Drawing.Point(88, 132);
             this.comboMap.Name = "comboMap";
             this.comboMap.Size = new System.Drawing.Size(236, 21);
             this.comboMap.TabIndex = 5;
@@ -393,7 +439,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 116);
+            this.label6.Location = new System.Drawing.Point(12, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 4;
@@ -403,7 +449,7 @@
             // 
             this.textSvName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSvName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSvName.Location = new System.Drawing.Point(88, 44);
+            this.textSvName.Location = new System.Drawing.Point(88, 48);
             this.textSvName.Name = "textSvName";
             this.textSvName.Size = new System.Drawing.Size(235, 21);
             this.textSvName.TabIndex = 3;
@@ -412,7 +458,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 49);
+            this.label5.Location = new System.Drawing.Point(12, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 1;
@@ -466,7 +512,7 @@
             // 
             // btnSteamCmd
             // 
-            this.btnSteamCmd.Location = new System.Drawing.Point(594, 77);
+            this.btnSteamCmd.Location = new System.Drawing.Point(646, 106);
             this.btnSteamCmd.Name = "btnSteamCmd";
             this.btnSteamCmd.Size = new System.Drawing.Size(182, 23);
             this.btnSteamCmd.TabIndex = 4;
@@ -477,7 +523,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(591, 43);
+            this.label3.Location = new System.Drawing.Point(643, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 5;
@@ -485,7 +531,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(594, 126);
+            this.btnUpdate.Location = new System.Drawing.Point(646, 155);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(182, 23);
             this.btnUpdate.TabIndex = 6;
@@ -515,7 +561,7 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(594, 362);
+            this.btnAbout.Location = new System.Drawing.Point(646, 391);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(86, 23);
             this.btnAbout.TabIndex = 10;
@@ -525,7 +571,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(691, 362);
+            this.btnExit.Location = new System.Drawing.Point(743, 391);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(86, 23);
             this.btnExit.TabIndex = 11;
@@ -536,17 +582,17 @@
             // txtStatus
             // 
             this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStatus.Location = new System.Drawing.Point(12, 478);
+            this.txtStatus.Location = new System.Drawing.Point(12, 511);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(653, 20);
+            this.txtStatus.Size = new System.Drawing.Size(605, 20);
             this.txtStatus.TabIndex = 12;
             this.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textExternalIp
             // 
             this.textExternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textExternalIp.Location = new System.Drawing.Point(689, 478);
+            this.textExternalIp.Location = new System.Drawing.Point(738, 511);
             this.textExternalIp.Name = "textExternalIp";
             this.textExternalIp.ReadOnly = true;
             this.textExternalIp.Size = new System.Drawing.Size(91, 20);
@@ -559,7 +605,7 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button5);
-            this.panel2.Location = new System.Drawing.Point(585, 180);
+            this.panel2.Location = new System.Drawing.Point(637, 209);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 122);
             this.panel2.TabIndex = 14;
@@ -578,7 +624,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(591, 173);
+            this.label4.Location = new System.Drawing.Point(643, 202);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 15;
@@ -587,7 +633,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(585, 49);
+            this.panel3.Location = new System.Drawing.Point(637, 78);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 112);
             this.panel3.TabIndex = 16;
@@ -600,7 +646,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(797, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(849, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -684,7 +730,7 @@
             // textInternalIp
             // 
             this.textInternalIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textInternalIp.Location = new System.Drawing.Point(689, 452);
+            this.textInternalIp.Location = new System.Drawing.Point(646, 511);
             this.textInternalIp.Name = "textInternalIp";
             this.textInternalIp.ReadOnly = true;
             this.textInternalIp.Size = new System.Drawing.Size(91, 20);
@@ -695,7 +741,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 510);
+            this.ClientSize = new System.Drawing.Size(849, 543);
             this.Controls.Add(this.textInternalIp);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textExternalIp);
@@ -789,6 +835,10 @@
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textInternalIp;
+        private System.Windows.Forms.TextBox textCustomParameters;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnInfoParam;
     }
 }
 
