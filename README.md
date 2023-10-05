@@ -28,7 +28,9 @@
   - [UDP Port](#step-7-udp-port)
   - [Max Players](#step-8-max-players)
   - [Disable Bots](#step-9-disable-bots)
+  - [Insecure/Secure](#step-10-insecure/secure)
   - [Autoexec](#step-10-autoexec)
+  - [Custom Parameters](#step-11-custom-parameters)
 
 ## Preview
 
@@ -75,10 +77,14 @@ Set the maximum number of players for the server (Up to 64).
 ### Step 9: Disable Bots
 Turn off the server bots.
 
-### Step 10: Autoexec
+### Step 10: Insecure/Secure
+Activate or deactivate the launch parameter of -insecure or -secure. By default, it is deactivated, meaning the server will run with -secure.<br> 
+If the checkBox is activated, it will run in -insecure mode. If you want to run the server with a custom map, you will need to use insecure as CS2 still doesn't support running unofficial maps securely.
+
+### Step 11: Autoexec
 Enable or disable the execution of `autoexec`.
 
-### Step 11: Custom Parameters
+### Step 12: Custom Parameters
 Allows you to add custom launch parameters. Be sure not to duplicate launch parameters integrated into the program to avoid conflicts and server errors. It can be used with the following syntax to execute a custom map: `+map {MapName}`.
 
 ## Known Bugs 🐛
