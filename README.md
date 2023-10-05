@@ -33,6 +33,7 @@
   - [Custom Parameters](#step-12-custom-parameters)
   - [InApp Console](#step-13-inapp-console)
 - [Scripting](#scripting)
+- [Known Bugs](#known-bugs)
 
 ## Preview
 
