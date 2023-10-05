@@ -103,7 +103,7 @@ If anyone knows about scripting for CS2 servers, please contact me. Thank you.
   - Not to have the server on the same machine/computer as the game.
   - If separation isn't possible, generate the `autoexec.cfg`, set it up, then remove it from the folder `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`. Once you have started the game, drag the `autoexec.cfg` back into the folder and start the server.
 
- - **The cs2 console still opens even when `Open console on app` is selected: This happens because the `-hideconsole` argument might not yet be incorporated into cs2, making it inevitable that it will open.
+- **The cs2 console still opens even when `Open console on app` is selected**: This happens because the `-hideconsole` argument might not yet be incorporated into cs2, making it inevitable that it will open.
 
 ---
 
