@@ -31,6 +31,7 @@
   - [Insecure/Secure](#step-10-insecure-secure)
   - [Autoexec](#step-11-autoexec)
   - [Custom Parameters](#step-12-custom-parameters)
+  - [InApp Console](#step-13-inapp-console)
 - [Scripting](#scripting)
 
 ## Preview
@@ -87,6 +88,11 @@ Enable or disable the execution of `autoexec`.
 
 ### Step 12: Custom Parameters
 Allows you to add custom launch parameters. Be sure not to duplicate launch parameters integrated into the program to avoid conflicts and server errors. It can be used with the following syntax to execute a custom map: `+map {MapName}`.
+
+### Step 13: InApp Console
+If you check the CheckBox "Open console on app", this will cause the server logs to open in the "console" section instead of the cs2 console.<br>
+This is useful for monitoring logs and saving them (coming soon). Currently, the '-hideconsole' parameter doesn't work with cs2, so even if you check the "Open console on app" option,<br>
+the empty cs2 console will still pop up. If the sole purpose of using the application is to open the server and then close the application, I don't recommend using this option as you will lose the server logs.
 
 ## Scripting
 If anyone knows about scripting for CS2 servers, please contact me. Thank you.
