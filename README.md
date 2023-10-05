@@ -88,7 +88,7 @@ Enable or disable the execution of `autoexec`.
 ### Step 12: Custom Parameters
 Allows you to add custom launch parameters. Be sure not to duplicate launch parameters integrated into the program to avoid conflicts and server errors. It can be used with the following syntax to execute a custom map: `+map {MapName}`.
 
-## Scriping
+## Scripting
 If anyone knows about scripting for CS2 servers, please contact me. Thank you.
 
 ## Known Bugs 🐛
