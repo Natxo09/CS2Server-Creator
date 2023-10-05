@@ -58,7 +58,7 @@ To modify this section, you must have generated the `autoexec.cfg` using the but
 Similar to the `Server Name`, you need to have the `autoexec.cfg` created.
 
 ### Step 4: Map
-Choose the map for your server. (Future compatibility with workshop maps is planned.)
+Choose the map for your server. (If you have set the execution of a map with +map {MapName} in [Custom Parameters](#custom-parameters), leave this combo box empty..)
 
 ### Step 5: Network
 Not Available Yet.
@@ -78,6 +78,9 @@ Turn off the server bots.
 ### Step 10: Autoexec
 Enable or disable the execution of `autoexec`.
 
+### Step 11: Custom Parameters
+Allows you to add custom launch parameters. Be sure not to duplicate launch parameters integrated into the program to avoid conflicts and server errors. It can be used with the following syntax to execute a custom map: `+map {MapName}`.
+
 ## Known Bugs 🐛
 
 - **Loading screen freeze after creating `autoexec.cfg` with cs2.exe closed**: If you create the `autoexec.cfg` while cs2.exe is closed, upon opening it, the loading screen might freeze. If this occurs, it's recommended:
@@ -86,6 +89,7 @@ Enable or disable the execution of `autoexec`.
 
 ---
 
-Any issues, please refer to the [issues](https://github.com/Natxo09/CS2Server-Creator/issues) section or contact us directly.
+Any issues, please refer to the [issues](https://github.com/Natxo09/CS2Server-Creator/issues) section or contact us directly.<br>
+P.S. This is my first public project. I hope everything goes smoothly. :=
 
 
