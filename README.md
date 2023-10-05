@@ -78,8 +78,8 @@ Set the maximum number of players for the server (Up to 64).
 Turn off the server bots.
 
 ### Step 10: Insecure-Secure
-Activate or deactivate the launch parameter of -insecure or -secure. By default, it is deactivated, meaning the server will run with -secure.<br> 
-If the checkBox is activated, it will run in -insecure mode. If you want to run the server with a custom map, you will need to use insecure as CS2 still doesn't support running unofficial maps securely.
+Activate or deactivate the launch parameter of `-insecure` or `-secure`. By default, it is deactivated, meaning the server will run with `-secure`.<br> 
+If the checkBox is activated, it will run in `-insecure` mode. If you want to run the server with a custom map, you will need to use insecure as CS2 still doesn't support running unofficial maps securely.
 
 ### Step 11: Autoexec
 Enable or disable the execution of `autoexec`.
