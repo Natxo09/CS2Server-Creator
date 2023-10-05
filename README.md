@@ -58,7 +58,7 @@ To modify this section, you must have generated the `autoexec.cfg` using the but
 Similar to the `Server Name`, you need to have the `autoexec.cfg` created.
 
 ### Step 4: Map
-Choose the map for your server. (If you have set the execution of a map with +map {MapName} in [Custom Parameters](#custom-parameters), leave this combo box empty..)
+Choose the map for your server. (If you have set the execution of a map with +map {MapName} in [Custom Parameters](#Step 11: Custom Parameters), leave this combo box empty..)
 
 ### Step 5: Network
 Not Available Yet.
