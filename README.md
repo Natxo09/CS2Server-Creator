@@ -90,8 +90,8 @@ Enable or disable the execution of `autoexec`.
 Allows you to add custom launch parameters. Be sure not to duplicate launch parameters integrated into the program to avoid conflicts and server errors. It can be used with the following syntax to execute a custom map: `+map {MapName}`.
 
 ### Step 13: InApp Console
-If you check the CheckBox "Open console on app", this will cause the server logs to open in the "console" section instead of the cs2 console.<br>
-This is useful for monitoring logs and saving them (coming soon). Currently, the '-hideconsole' parameter doesn't work with cs2, so even if you check the "Open console on app" option,<br>
+If you check the CheckBox `Open console on app`, this will cause the server logs to open in the `console` section instead of the cs2 console.<br>
+This is useful for monitoring `logs` and saving them (coming soon). Currently, the `-hideconsole` parameter doesn't work with cs2, so even if you check the `Open console on app` option,<br>
 the empty cs2 console will still pop up. If the sole purpose of using the application is to open the server and then close the application, I don't recommend using this option as you will lose the server logs.
 
 ## Scripting
@@ -102,6 +102,8 @@ If anyone knows about scripting for CS2 servers, please contact me. Thank you.
 - **Loading screen freeze after creating `autoexec.cfg` with cs2.exe closed**: If you create the `autoexec.cfg` while cs2.exe is closed, upon opening it, the loading screen might freeze. If this occurs, it's recommended:
   - Not to have the server on the same machine/computer as the game.
   - If separation isn't possible, generate the `autoexec.cfg`, set it up, then remove it from the folder `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`. Once you have started the game, drag the `autoexec.cfg` back into the folder and start the server.
+
+ - **The cs2 console still opens even when `Open console on app` is selected: This happens because the `-hideconsole` argument might not yet be incorporated into cs2, making it inevitable that it will open.
 
 ---
 
