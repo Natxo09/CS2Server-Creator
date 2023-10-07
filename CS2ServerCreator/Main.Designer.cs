@@ -93,10 +93,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabConsole = new System.Windows.Forms.TabPage();
-            this.richTextBoxConsole = new System.Windows.Forms.RichTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBoxConsole = new System.Windows.Forms.CheckBox();
             this.btnClearConsole = new System.Windows.Forms.Button();
+            this.textInputConsole = new System.Windows.Forms.TextBox();
+            this.richTextBoxConsole = new System.Windows.Forms.RichTextBox();
+            this.checkBoxConsole = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -413,7 +413,7 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(11, 116);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(566, 315);
+            this.panel5.Size = new System.Drawing.Size(589, 315);
             this.panel5.TabIndex = 5;
             // 
             // btnInfoParam
@@ -439,7 +439,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(431, 9);
+            this.label15.Location = new System.Drawing.Point(428, 9);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(60, 13);
             this.label15.TabIndex = 28;
@@ -477,7 +477,7 @@
             // 
             this.checkAutoexec.AutoSize = true;
             this.checkAutoexec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkAutoexec.Location = new System.Drawing.Point(384, 63);
+            this.checkAutoexec.Location = new System.Drawing.Point(381, 63);
             this.checkAutoexec.Name = "checkAutoexec";
             this.checkAutoexec.Size = new System.Drawing.Size(76, 19);
             this.checkAutoexec.TabIndex = 24;
@@ -599,7 +599,7 @@
             // 
             this.checkInsecure.AutoSize = true;
             this.checkInsecure.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInsecure.Location = new System.Drawing.Point(384, 30);
+            this.checkInsecure.Location = new System.Drawing.Point(381, 30);
             this.checkInsecure.Name = "checkInsecure";
             this.checkInsecure.Size = new System.Drawing.Size(73, 19);
             this.checkInsecure.TabIndex = 13;
@@ -610,7 +610,7 @@
             // 
             this.checkDisBots.AutoSize = true;
             this.checkDisBots.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDisBots.Location = new System.Drawing.Point(466, 30);
+            this.checkDisBots.Location = new System.Drawing.Point(463, 30);
             this.checkDisBots.Name = "checkDisBots";
             this.checkDisBots.Size = new System.Drawing.Size(95, 19);
             this.checkDisBots.TabIndex = 12;
@@ -771,7 +771,7 @@
             // tabConsole
             // 
             this.tabConsole.Controls.Add(this.btnClearConsole);
-            this.tabConsole.Controls.Add(this.textBox2);
+            this.tabConsole.Controls.Add(this.textInputConsole);
             this.tabConsole.Controls.Add(this.richTextBoxConsole);
             this.tabConsole.Location = new System.Drawing.Point(4, 22);
             this.tabConsole.Name = "tabConsole";
@@ -781,6 +781,25 @@
             this.tabConsole.Text = "Console";
             this.tabConsole.UseVisualStyleBackColor = true;
             // 
+            // btnClearConsole
+            // 
+            this.btnClearConsole.Location = new System.Drawing.Point(521, 425);
+            this.btnClearConsole.Name = "btnClearConsole";
+            this.btnClearConsole.Size = new System.Drawing.Size(86, 23);
+            this.btnClearConsole.TabIndex = 11;
+            this.btnClearConsole.Text = "Clear";
+            this.btnClearConsole.UseVisualStyleBackColor = true;
+            this.btnClearConsole.Click += new System.EventHandler(this.btnClearConsole_Click);
+            // 
+            // textInputConsole
+            // 
+            this.textInputConsole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textInputConsole.Location = new System.Drawing.Point(7, 427);
+            this.textInputConsole.Name = "textInputConsole";
+            this.textInputConsole.Size = new System.Drawing.Size(509, 20);
+            this.textInputConsole.TabIndex = 1;
+            this.textInputConsole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textInputConsole_KeyPress);
+            // 
             // richTextBoxConsole
             // 
             this.richTextBoxConsole.Location = new System.Drawing.Point(7, 7);
@@ -789,14 +808,6 @@
             this.richTextBoxConsole.Size = new System.Drawing.Size(594, 413);
             this.richTextBoxConsole.TabIndex = 0;
             this.richTextBoxConsole.Text = "";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(7, 427);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(509, 20);
-            this.textBox2.TabIndex = 1;
             // 
             // checkBoxConsole
             // 
@@ -808,16 +819,6 @@
             this.checkBoxConsole.TabIndex = 25;
             this.checkBoxConsole.Text = "Open console on app";
             this.checkBoxConsole.UseVisualStyleBackColor = true;
-            // 
-            // btnClearConsole
-            // 
-            this.btnClearConsole.Location = new System.Drawing.Point(521, 425);
-            this.btnClearConsole.Name = "btnClearConsole";
-            this.btnClearConsole.Size = new System.Drawing.Size(86, 23);
-            this.btnClearConsole.TabIndex = 11;
-            this.btnClearConsole.Text = "Clear";
-            this.btnClearConsole.UseVisualStyleBackColor = true;
-            this.btnClearConsole.Click += new System.EventHandler(this.btnClearConsole_Click);
             // 
             // Main
             // 
@@ -928,7 +929,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TabPage tabConsole;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textInputConsole;
         private System.Windows.Forms.RichTextBox richTextBoxConsole;
         private System.Windows.Forms.CheckBox checkBoxConsole;
         private System.Windows.Forms.Button btnClearConsole;

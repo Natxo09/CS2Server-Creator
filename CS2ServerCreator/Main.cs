@@ -156,6 +156,7 @@ namespace CS2ServerCreator
                         {
                             args += " -hideconsole";
                             startInfo.RedirectStandardOutput = true;
+                            startInfo.RedirectStandardInput = true;
                             startInfo.UseShellExecute = false;
                             startInfo.CreateNoWindow = true;
                             startInfo.WindowStyle = ProcessWindowStyle.Hidden; // Esta línea evita que se muestre la consola.
@@ -170,8 +171,8 @@ namespace CS2ServerCreator
                             cs2Process = Process.Start(startInfo);
                         }
 
-                        btnStart.Text = "Stop";  // Cambiar el texto del botón a "Stop"
-                        txtStatus.Text = "Running ......";
+                        //btnStart.Text = "Stop";  // Cambiar el texto del botón a "Stop"
+                        //txtStatus.Text = "Running ......";
                     }
                     else
                     {
@@ -183,13 +184,13 @@ namespace CS2ServerCreator
                     MessageBox.Show("Please, Select the right directory.");
                 }
             }
-            else  // Si el proceso ya está en ejecución
-            {
-                cs2Process.Kill();  // Terminar el proceso
-                cs2Process = null;  // Restablecer la variable
-                btnStart.Text = "Start";  // Cambiar el texto del botón de nuevo a "Start"
-                txtStatus.Text = "Stopped ......";
-            }
+            //else  // Si el proceso ya está en ejecución
+            //{
+            //    cs2Process.Kill();  // Terminar el proceso
+            //    cs2Process = null;  // Restablecer la variable
+            //    btnStart.Text = "Start";  // Cambiar el texto del botón de nuevo a "Start"
+            //    txtStatus.Text = "Stopped ......";
+            //}
         }
 
         private void AppendTextAndScroll(RichTextBox box, string text)
@@ -738,6 +739,23 @@ exec banned_ip.cfg
             System.Diagnostics.Process.Start("https://developer.valvesoftware.com/wiki/Command_line_options");
         }
 
+        private void textInputConsole_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Evita que el sonido de "beep" se ejecute cuando se presione Enter
+                e.Handled = true;
 
+                if (cs2Process != null && !cs2Process.HasExited)
+                {
+                    StreamWriter sw = cs2Process.StandardInput;
+                    sw.WriteLine(textInputConsole.Text);
+                    sw.Flush();
+
+                    // Limpiar el TextBox después de enviar el comando
+                    textInputConsole.Clear();
+                }
+            }
+        }
     }
 }
