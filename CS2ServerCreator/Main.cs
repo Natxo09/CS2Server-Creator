@@ -22,11 +22,22 @@ namespace CS2ServerCreator
     {
         private string selectedDirectory = "";
         private Process cs2Process = null;
+        private Timer restartTimer;
+        private Timer checkServerStatusTimer;
         public Main()
         {
             InitializeComponent();
             DisplayInternalIP();
             DisplayExternalIP();
+
+            // Inicialización del Timer de reinicio
+            restartTimer = new Timer();
+            restartTimer.Tick += TimerTick;
+
+            // Inicialización del Timer de comprobación del estado del servidor
+            checkServerStatusTimer = new Timer();
+            checkServerStatusTimer.Interval = 10 * 1000; // 10 segundos
+            checkServerStatusTimer.Tick += CheckServerStatusTick;
         }
 
         private void btnDirExplorer_Click(object sender, EventArgs e)
@@ -145,6 +156,15 @@ namespace CS2ServerCreator
                             args += " -nobots";
                         }
 
+                        // Si el checkbox de minutos está marcado, inicia el Timer de reinicio
+                        if (checkMinutes.Checked)
+                        {
+                            restartTimer.Interval = (int)numericUpDownMinutes.Value * 60 * 1000; // Convertir minutos a milisegundos
+                            restartTimer.Start();
+                        }
+
+                        checkServerStatusTimer.Start(); // Inicia el Timer de comprobación de estado
+
                         ProcessStartInfo startInfo = new ProcessStartInfo
                         {
                             FileName = exePath,
@@ -156,7 +176,7 @@ namespace CS2ServerCreator
                         {
                             args += " -hideconsole";
                             startInfo.RedirectStandardOutput = true;
-                            startInfo.RedirectStandardInput = true;
+                            //startInfo.RedirectStandardInput = true;
                             startInfo.UseShellExecute = false;
                             startInfo.CreateNoWindow = true;
                             startInfo.WindowStyle = ProcessWindowStyle.Hidden; // Esta línea evita que se muestre la consola.
@@ -739,23 +759,216 @@ exec banned_ip.cfg
             System.Diagnostics.Process.Start("https://developer.valvesoftware.com/wiki/Command_line_options");
         }
 
-        private void textInputConsole_KeyPress(object sender, KeyPressEventArgs e)
+        private void gamemodecasualcfgToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (!string.IsNullOrEmpty(selectedDirectory))
             {
-                // Evita que el sonido de "beep" se ejecute cuando se presione Enter
-                e.Handled = true;
+                string baseDir = selectedDirectory;
+                int gameIndex = baseDir.IndexOf("\\game\\");
 
-                if (cs2Process != null && !cs2Process.HasExited)
+                if (gameIndex != -1)
                 {
-                    StreamWriter sw = cs2Process.StandardInput;
-                    sw.WriteLine(textInputConsole.Text);
-                    sw.Flush();
+                    baseDir = baseDir.Substring(0, gameIndex + "\\game\\".Length);
+                    string cfgPath = Path.Combine(baseDir, "csgo", "cfg", "gamemode_casual.cfg");
 
-                    // Limpiar el TextBox después de enviar el comando
-                    textInputConsole.Clear();
+                    if (File.Exists(cfgPath))
+                    {
+                        try
+                        {
+                            // Abrir el archivo autoexec.cfg con el programa predeterminado
+                            Process.Start(cfgPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while opening autoexec.cfg: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("autoexec.cfg does not exist. Please create it first.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The folder 'game' was not found in the selected directory path.");
                 }
             }
+            else
+            {
+                MessageBox.Show("Please, select the right directory.");
+            }
+        }
+
+        private void gamemodecompetitivecfgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedDirectory))
+            {
+                string baseDir = selectedDirectory;
+                int gameIndex = baseDir.IndexOf("\\game\\");
+
+                if (gameIndex != -1)
+                {
+                    baseDir = baseDir.Substring(0, gameIndex + "\\game\\".Length);
+                    string cfgPath = Path.Combine(baseDir, "csgo", "cfg", "gamemode_competitive.cfg");
+
+                    if (File.Exists(cfgPath))
+                    {
+                        try
+                        {
+                            // Abrir el archivo autoexec.cfg con el programa predeterminado
+                            Process.Start(cfgPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while opening autoexec.cfg: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("autoexec.cfg does not exist. Please create it first.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The folder 'game' was not found in the selected directory path.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select the right directory.");
+            }
+        }
+
+        private void gamemodecompetitive2v2cfgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedDirectory))
+            {
+                string baseDir = selectedDirectory;
+                int gameIndex = baseDir.IndexOf("\\game\\");
+
+                if (gameIndex != -1)
+                {
+                    baseDir = baseDir.Substring(0, gameIndex + "\\game\\".Length);
+                    string cfgPath = Path.Combine(baseDir, "csgo", "cfg", "gamemode_competitive2v2.cfg");
+
+                    if (File.Exists(cfgPath))
+                    {
+                        try
+                        {
+                            // Abrir el archivo autoexec.cfg con el programa predeterminado
+                            Process.Start(cfgPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while opening autoexec.cfg: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("autoexec.cfg does not exist. Please create it first.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The folder 'game' was not found in the selected directory path.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select the right directory.");
+            }
+        }
+
+        private void gamemodedeathmatchcfgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedDirectory))
+            {
+                string baseDir = selectedDirectory;
+                int gameIndex = baseDir.IndexOf("\\game\\");
+
+                if (gameIndex != -1)
+                {
+                    baseDir = baseDir.Substring(0, gameIndex + "\\game\\".Length);
+                    string cfgPath = Path.Combine(baseDir, "csgo", "cfg", "gamemode_deathmatch.cfg");
+
+                    if (File.Exists(cfgPath))
+                    {
+                        try
+                        {
+                            // Abrir el archivo autoexec.cfg con el programa predeterminado
+                            Process.Start(cfgPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while opening autoexec.cfg: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("autoexec.cfg does not exist. Please create it first.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The folder 'game' was not found in the selected directory path.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select the right directory.");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (checkBoxConsole.Checked)
+            {
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                    saveFileDialog.DefaultExt = "txt";
+                    saveFileDialog.AddExtension = true;
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string path = saveFileDialog.FileName;
+                        File.WriteAllText(path, richTextBoxConsole.Text);
+                        MessageBox.Show("Log saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("The server is not running on the app, if you want to save the logs you have to start the server on app", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            restartTimer.Stop();  // Detiene el Timer
+
+            if (cs2Process != null && !cs2Process.HasExited)
+            {
+                cs2Process.Kill();
+                cs2Process.WaitForExit();
+            }
+
+            btnStart_Click(this, EventArgs.Empty);
+        }
+
+        private void CheckServerStatusTick(object sender, EventArgs e)
+        {
+            if (cs2Process == null || cs2Process.HasExited)
+            {
+                checkServerStatusTimer.Stop();
+                restartTimer.Stop();
+                // Aquí puedes realizar otras acciones, como notificar al usuario.
+            }
+        }
+
+        private void btnMetamod_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=Gnsmn9GPX4k");
         }
     }
 }
