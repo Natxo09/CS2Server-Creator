@@ -102,9 +102,9 @@ If anyone knows about scripting for CS2 servers, please contact me. Thank you.
 ## Known Bugs 🐛
 - **The cs2 console still opens even when `Open console on app` is selected**: This happens because the <br>
 `-hideconsole` argument might not yet be incorporated into cs2, making it inevitable that it will open.
-- The Faceit Anticheat does not allow interaction with cs2.exe, which means that when this application is running, it will result in an "Access Denied" error. <br>
+- The `Faceit Anticheat` does not allow interaction with `cs2.exe`, which means that when this application is running, it will result in an `Access Denied` error. <br>
   In this situation, there's nothing I can do, as it could cause malfunctions and even lead the anticheat to detect it as a cheat. Therefore,<br>
-  I do not recommend using the application while the Faceit anticheat is running. The application is completely safe as it only uses commands and arguments provided by Valve in their forums.
+  I do not recommend using the application while the `Faceit Anticheat` is running. The application is completely safe as it only uses commands and arguments provided by `Valve` in their forums.
 
 ---
 
