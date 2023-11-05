@@ -97,7 +97,7 @@ This is useful for monitoring `logs` and saving them (coming soon). Currently, t
 the empty cs2 console will still pop up. If the sole purpose of using the application is to open the server and then close the application, I don't recommend using this option as you will lose the server logs.
 
 ## Scripting
-Here you have a video about <a href="https://www.youtube.com/watch?v=Gnsmn9GPX4k&t=3s">Scripting in CS2</a>: 
+Here you have a video about <a href="https://youtu.be/Gnsmn9GPX4k?si=LPFvBQ-XYDc_imMP">Scripting in CS2</a>: 
 
 ## Known Bugs 🐛
 - **The cs2 console still opens even when `Open console on app` is selected**: This happens because the <br>
