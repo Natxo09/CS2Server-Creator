@@ -978,5 +978,6 @@ exec banned_ip.cfg
         {
             System.Diagnostics.Process.Start("https://github.com/roflmuffin/CounterStrikeSharp");
         }
+
     }
 }
